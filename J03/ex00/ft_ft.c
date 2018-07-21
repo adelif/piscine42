@@ -1,18 +1,17 @@
-#include <unistd.h>
 #include <stdio.h>
 
-void		ft_ft(int *nbr)
+void	ft_ft(int *nbr)
 {
 	*nbr = 42;
-	printf("adresse de &*nbr -> %p\n", &*nbr);
-	printf("adresse de &nbr -> %p\n", &nbr);
-	printf("valeur de l'int dans *nbr -> %d\n", *nbr);
 }
 
-int			main()
+int	main()
 {
-	int nbr[10];
+	int *nbr;
 
-	ft_ft(nbr);
+	*nbr = 42;
+	printf("adresse de *nbr %p\n", &*nbr);
+	printf("adresse de nbr %p\n", &nbr);
+	printf("valeur de *nbr %d\n", *nbr);
 	return (0);
 }
