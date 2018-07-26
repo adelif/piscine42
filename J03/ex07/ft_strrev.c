@@ -1,41 +1,31 @@
 #include <stdio.h>
-#include <unistd.h>
 
 char	*ft_strrev(char *str)
 {
-	char *str;
-	int i;
-	
+	int	i;
+	int	j;
+	char	temp;
+
 	i = 0;
-	*str = str[0];
-
-	while(*str != '\n')
-	{
-		*str++;
+	j = 0;
+	while(str[i] != '\0')
 		i++;
+	i--;
+	while (j < i)
+	{
+		temp = str[i];
+		str[i] = str[j];
+		str[j] = temp;
+		j++;
+		i--;
 	}
-
-//première étape  : parcourrir toute la str
-//deuxième étape  : stoquer char par char la str à l'envèrs
-//Bonne chance !
+	return (str);
 }
 
-void	ft_putchar(char *str)
+int	main()
 {
-	write(1, &c, 1);
-}
+	char str[] = "Bonjour Daphenie !";
 
-char	*ft_strrev(char *str)
-{
-	char *str;
-	str = "bonjour";
-	ft_putchar(str[0]);
-	ft_putchar(str[1]);
-	ft_putchar(str[2]);
-	ft_putchar(str[3]);
-	ft_putchar(str[4]);
-	ft_putchar(str[5]);
-	ft_putchar(str[6]);
-	ft_putchar('\n');
-	return (*str);
+	printf("%s", ft_strrev(str));
+	return (0);
 }
