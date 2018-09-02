@@ -5,7 +5,7 @@ void    ft_putchar(char c)
     write(1, &c, 1);
 }
 
-void    affiche(char a, char b, char c)
+void    printComb(char a, char b, char c)
 {
     ft_putchar(a);
     ft_putchar(b);
@@ -14,7 +14,7 @@ void    affiche(char a, char b, char c)
     ft_putchar(' ');
 }
 
-void    daf(char a, char b, char c)
+void    printLastComb(char a, char b, char c)
 {
     ft_putchar(a);
     ft_putchar(b);
@@ -27,7 +27,7 @@ void    ft_print_comb()
     char a;
     char b;
     char c;
-    
+
     a = '0';
     b = '1';
     c = '2';
@@ -38,9 +38,9 @@ void    ft_print_comb()
             while (c <= '9')
             {
                 if (a == '7' && b == '8' && c == '9')
-                    daf(a, b, c);
+                    printLastComb(a, b, c);
                 else
-                    affiche(a, b , c);
+                    printComb(a, b, c);
                 c++;
             }
             b++;
