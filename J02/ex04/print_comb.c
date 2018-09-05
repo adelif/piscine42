@@ -5,21 +5,18 @@ void    ft_putchar(char c)
     write(1, &c, 1);
 }
 
-void    printComb(char a, char b, char c)
+void    print_comb(char a, char b, char c)
 {
     ft_putchar(a);
     ft_putchar(b);
     ft_putchar(c);
-    ft_putchar(',');
-    ft_putchar(' ');
-}
-
-void    printLastComb(char a, char b, char c)
-{
-    ft_putchar(a);
-    ft_putchar(b);
-    ft_putchar(c);
-    ft_putchar('\n');
+	if (a == '7' &&  b == '8' && c == '9')
+		ft_putchar('\n');
+	else
+	{
+		ft_putchar(',');
+		ft_putchar(' ');
+	}
 }
 
 void    ft_print_comb()
@@ -37,10 +34,7 @@ void    ft_print_comb()
         {
             while (c <= '9')
             {
-                if (a == '7' && b == '8' && c == '9')
-                    printLastComb(a, b, c);
-                else
-                    printComb(a, b, c);
+                print_comb(a, b, c);
                 c++;
             }
             b++;
