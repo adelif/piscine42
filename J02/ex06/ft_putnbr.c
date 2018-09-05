@@ -5,9 +5,11 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int nb)
 {
-	if (nb < -9 || nb > 9)
+	if (nb < –2147483648 || nb > 2147483647)
+		return;
+	else if (nb < -9 || nb > 9)
 		ft_putnbr(nb / 10);
-	if (nb < 0)
+	else if (nb < 0)
 	{
 		if (nb >= -9 && nb <= 9)
 			ft_putchar('-');
@@ -23,5 +25,5 @@ int		main(void)
 	ft_putchar('\n');
 	ft_putnbr(-77400);
 	ft_putchar('\n');
-	ft_putchar(0);
+	ft_putnbr(0);
 }
